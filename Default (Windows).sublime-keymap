@@ -1,0 +1,3 @@
+[
+    { "keys": ["alt+f7"], "command": "exec", "args": {"cmd": ["rake", "spec"], "file_regex": "# ([A-Za-z0-9_./ ]+rb):([0-9]+)"} }
+]

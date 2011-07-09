@@ -1,0 +1,13 @@
+[
+	{ "keys": ["super+alt+b"],
+		"command": "exec",
+		"args": {"cmd": ["rake", "spec"]},
+		"file_regex": "# ([A-Za-z0-9_./ ]+rb):([0-9]+)",
+		"working_dir": "${folder}"
+	},
+		
+	{ "keys": ["super+alt+period"], "command": "open_rspec_file", "args": {"option": "test_and_source"} },
+	{ "keys": ["super+period"],     "command": "open_rspec_file", "args": {"option": "next"} },
+	{ "keys": ["super+alt+s"],      "command": "open_rspec_file", "args": {"option": "source"} },
+	{ "keys": ["super+alt+t"],      "command": "open_rspec_file", "args": {"option": "test"} }
+]

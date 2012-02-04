@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -52,11 +52,19 @@
 			<key>match</key>
 			<string>(?&lt;!\.)\b(before|after)\b(?![?!])</string>
 			<key>name</key>
-			<string>keyword.other.special-method.ruby.rspec</string>
+			<string>keyword.other.rspec</string>
 		</dict>
 		<dict>
 			<key>include</key>
 			<string>#behaviour</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#single-line-example</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#pending</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -72,13 +80,13 @@
 		<key>behaviour</key>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(describe)\b</string>
+			<string>^\s*(describe|context)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.behaviour.ruby.rspec</string>
+					<string>keyword.other.rspec.behaviour</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -88,11 +96,11 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.start-block.ruby.rspec</string>
+					<string>keyword.control.ruby.start-block</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.behaviour.ruby.rspec</string>
+			<string>meta.rspec.behaviour</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -104,13 +112,13 @@
 		<key>example</key>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(it)\b</string>
+			<string>^\s*(it|specify)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.example.ruby.rspec</string>
+					<string>keyword.other.rspec.example</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -120,11 +128,11 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.start-block.ruby.rspec</string>
+					<string>keyword.control.ruby.start-block</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.example.ruby.rspec</string>
+			<string>meta.rspec.example</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -132,6 +140,39 @@
 					<string>source.ruby</string>
 				</dict>
 			</array>
+		</dict>
+		<key>pending</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.rspec.pending</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.ruby</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(it|specify)\s+(.*[^do])\s*$</string>
+			<key>name</key>
+			<string>meta.rspec.pending</string>
+		</dict>
+		<key>single-line-example</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.rspec.example</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(it|specify)\s*{</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>

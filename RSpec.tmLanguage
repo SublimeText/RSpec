@@ -50,7 +50,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\.)\b(before|after)\b(?![?!])</string>
+			<string>(?&lt;!\.)\b(before|after|subject|let)\b(?![?!])</string>
 			<key>name</key>
 			<string>keyword.other.rspec</string>
 		</dict>

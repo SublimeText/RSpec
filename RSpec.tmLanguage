@@ -122,7 +122,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\b(do)\s*$</string>
+			<string>\b(do(?=\s*$))|{</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>

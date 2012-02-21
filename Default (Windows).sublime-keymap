@@ -1,7 +1,7 @@
 [
 	{ "keys": ["ctrl+f7"],
 		"command": "exec",
-		"args": {"cmd": ["rake.bat", "spec"]},
+		"args": {"cmd": ["rspec.bat", "*"]},
 		"file_regex": "# ([A-Za-z0-9_./ ]+rb):([0-9]+)",
 		"working_dir": "${folder}"
 	},

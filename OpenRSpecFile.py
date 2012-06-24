@@ -13,7 +13,7 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 		current_file_path = self.window.active_view().file_name()
 
 		if re.search(r"\w+\.rb$", current_file_path):
-			
+
 			current_file = re.search(r"([\w\.]+)$", current_file_path).group(1)
 			base_name = re.search(r"(\w+)\.(\w+)$", current_file).group(1)
 			base_name = re.sub('_spec', '', base_name)
@@ -35,16 +35,16 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 				self.open_project_file(test_matcher, window)
 			elif option == 'test_and_source':
 				window.run_command('set_layout', {
-                            "cols": [0.0, 0.5, 1.0],
-                            "rows": [0.0, 1.0],
-                            "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
-                        })
+			    "cols": [0.0, 0.5, 1.0],
+			    "rows": [0.0, 1.0],
+			    "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+			})
 				self.open_project_file(test_matcher, window, 0)
 				self.open_project_file(source_matcher, window, 1)
-			
+
 		for v in self.views:
 			window.focus_view(v)
-				
+
 	def open_project_file(self, file_matcher, window, auto_set_view=-1):
 		for root, dirs, files in os.walk(window.folders()[0]):
 			for f in files:

@@ -5,11 +5,8 @@
 		"file_regex": "# ([A-Za-z0-9_./ ]+rb):([0-9]+)",
 		"working_dir": "${folder}"
 	},
-		
-	{ "keys": ["ctrl+alt+period"], "command": "open_rspec_file", "args": {"option": "test_and_source"} },
-	{ "keys": ["ctrl+period"],     "command": "open_rspec_file", "args": {"option": "next"} },
-	{ "keys": ["ctrl+alt+s"],      "command": "open_rspec_file", "args": {"option": "source"} },
-	{ "keys": ["ctrl+alt+t"],      "command": "open_rspec_file", "args": {"option": "test"} },
 
-	{ "keys": ["ctrl+alt+n"], 		"command": "rspec_create_module", "args": {} }
+	{ "keys": ["ctrl+period"], "command": "open_rspec_file", "args": {} },
+
+	{ "keys": ["ctrl+alt+n"], "command": "rspec_create_module", "args": {} }
 ]

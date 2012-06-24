@@ -1,5 +1,6 @@
 import sublime, sublime_plugin, time
 import re
+import shared
 
 _patterns = dict((k, re.compile('_*' + v)) for (k, v)
                     in dict(allcamel=r'(?:[A-Z]+[a-z0-9]*)+$',
@@ -35,19 +36,23 @@ class RspecCreateModuleCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		# self.view.insert(edit, 0, "Hello, World!")
 		self.window.show_input_panel("Enter module name:", "", self.on_done, None, None)
-	
+
 	def on_done(self, text):
 
-		# configure 2-paned layout (spec, module)
-		self.window.run_command('set_layout', {
-			"cols": [0.0, 0.5, 1.0],
-			"rows": [0.0, 1.0],
-			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
-		})
-		
+		# create the module
+		module = self.window.new_file()
+		module.set_syntax_file('Packages/Ruby/Ruby.tmLanguage')
+		module.set_name(translate(text, 'allcamel', 'underscores') + '.rb')
+		module_template = "\n\
+class " + text + "\n\
+end"
+		edit = module.begin_edit()
+		module.insert(edit, 0, module_template)
+		module.end_edit(edit)
+
 		# create the spec
 		spec = self.window.new_file()
-		self.window.run_command('move_to_group', {'group': 0})
+		self.window.run_command('move_to_group', {'group': shared.other_group_in_pair(self.window)})
 		spec.set_syntax_file('Packages/Ruby/Ruby.tmLanguage')
 		spec.set_name(translate(text, 'allcamel', 'underscores') + '_spec.rb')
 		spec_template = "require 'spec_helper'\n\
@@ -59,17 +64,6 @@ end"
 		spec.insert(edit, 0, spec_template)
 		spec.end_edit(edit)
 
-		# create the module
-		module = self.window.new_file()
-		self.window.run_command('move_to_group', {'group': 1})
-		module.set_syntax_file('Packages/Ruby/Ruby.tmLanguage')
-		module.set_name(translate(text, 'allcamel', 'underscores') + '.rb')
-		module_template = "\n\
-class " + text + "\n\
-end"
-		edit = module.begin_edit()
-		module.insert(edit, 0, module_template)
-		module.end_edit(edit)
 		# try:
 		# except ValueError:
 		#     pass

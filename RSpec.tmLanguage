@@ -10,6 +10,8 @@
 	<string>(?x)^
 	    (\s*+
 	        (module|class|def
+	        |background|feature|subscribe
+	        |before|describe|it
 	        |unless|if
 	        |case
 	        |begin

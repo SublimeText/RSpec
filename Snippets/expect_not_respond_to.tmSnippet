@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).not_to respond_to(:${2:method})$0</string>
+  <string>expect(${1:subject}).not_to respond_to(:${2:method})$0</string>
   <key>name</key>
   <string>expect(subject) not respond_to</string>
   <key>scope</key>

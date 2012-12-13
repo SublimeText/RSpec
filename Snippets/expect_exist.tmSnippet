@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).to exist$0</string>
+  <string>expect(${1:subject}).to exist$0</string>
   <key>name</key>
   <string>expect(subject) exist</string>
   <key>scope</key>

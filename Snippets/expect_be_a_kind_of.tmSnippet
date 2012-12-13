@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).to be_a_kind_of(${2:klass})$0</string>
+  <string>expect(${1:subject}).to be_a_kind_of(${2:klass})$0</string>
   <key>name</key>
   <string>expect(subject) be_a_kind_of</string>
   <key>scope</key>

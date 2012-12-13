@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).not_to satisfy { |${2:obj}| ${3:expression} }$0</string>
+  <string>expect(${1:subject}).not_to satisfy { |${2:obj}| ${3:expression} }$0</string>
   <key>name</key>
   <string>expect(subject) not satisfy</string>
   <key>scope</key>

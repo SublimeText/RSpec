@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).to include(${2})$0</string>
+  <string>expect(${1:subject}).to include(${2})$0</string>
   <key>name</key>
   <string>expect(subject) include(element)</string>
   <key>scope</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).not_to equal(${2:value})$0</string>
+  <string>expect(${1:subject}).not_to equal(${2:value})$0</string>
   <key>name</key>
   <string>expect not equal</string>
   <key>scope</key>

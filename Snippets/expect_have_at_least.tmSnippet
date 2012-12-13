@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).to have_at_least(${2:num}).${3:things}$0</string>
+  <string>expect(${1:subject}).to have_at_least(${2:num}).${3:things}$0</string>
   <key>name</key>
   <string>expect(subject) have_at_least</string>
   <key>scope</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).to be_true$0</string>
+  <string>expect(${1:subject}).to be_true$0</string>
   <key>name</key>
   <string>expect(subject) be_true</string>
   <key>scope</key>

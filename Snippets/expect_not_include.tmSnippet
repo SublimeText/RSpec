@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>expect(${1:target}).not_to include(${2})$0</string>
+  <string>expect(${1:subject}).not_to include(${2})$0</string>
   <key>name</key>
   <string>expect(subject) not include(element)</string>
   <key>scope</key>

@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:target}.should_not match(/${2:regexp}/)
-$0</string>
+	<string>${1:target}.should_not match(/${2:regexp}/)$0</string>
 	<key>name</key>
 	<string>should_not match</string>
 	<key>scope</key>

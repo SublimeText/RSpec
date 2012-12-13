@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>lambda { $1 }.should_not throw_symbol(:${2:symbol})
-$0</string>
+	<string>lambda { $1 }.should_not throw_symbol(:${2:symbol})$0</string>
 	<key>name</key>
 	<string>should_not throw</string>
 	<key>scope</key>

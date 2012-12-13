@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:target}.should ${2:be_${3:predicate}} $4
-$0</string>
+	<string>${1:target}.should ${2:be_${3:predicate}} $4$0</string>
 	<key>name</key>
 	<string>should predicate</string>
 	<key>scope</key>

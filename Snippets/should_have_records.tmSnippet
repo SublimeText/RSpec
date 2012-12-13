@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:target}.should have(${2:x}).records
-$0</string>
+	<string>${1:target}.should have(${2:x}).records$0</string>
 	<key>name</key>
 	<string>should have_records</string>
 	<key>scope</key>

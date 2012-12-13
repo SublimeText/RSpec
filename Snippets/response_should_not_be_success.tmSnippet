@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>response.should_not be_success
-$0</string>
+	<string>response.should_not be_success$0</string>
 	<key>name</key>
 	<string>should_not be_success</string>
 	<key>scope</key>

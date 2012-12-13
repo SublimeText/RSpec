@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:target}.should_not be(${2:result})
-$0</string>
+	<string>${1:target}.should_not be(${2:result})$0</string>
 	<key>name</key>
 	<string>should_not be</string>
 	<key>scope</key>

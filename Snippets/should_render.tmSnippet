@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>response.should render_template(:${1:template})
-$0</string>
+	<string>response.should render_template(:${1:template})$0</string>
 	<key>name</key>
 	<string>should render_template</string>
 	<key>scope</key>

@@ -37,7 +37,7 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 			for f in files:
 				if re.search(r"\.rb$", f):
 					cur_file = os.path.join(root, f)
-					# print "Assessing: " + cur_file
+					# print("Assessing: " + cur_file)
 					if file_matcher.search(cur_file):
 						file_view = window.open_file(os.path.join(root, f))
 						if group >= 0: # don't set the view unless specified

@@ -1,7 +1,7 @@
 import sublime
 import sublime_plugin
 import re, inspect, os
-import shared
+from RSpec import shared
 
 class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 
@@ -24,20 +24,20 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 
 			target_group = shared.other_group_in_pair(window)
 
-			print "Current file: " + current_file
+			print("Current file: " + current_file)
 			if  re.search(re.compile(base_name + "_spec\.rb$"), current_file):
 				self.open_project_file(source_matcher, window, target_group)
 			elif re.search(re.compile(base_name + "\.rb$"), current_file):
 				self.open_project_file(test_matcher, window, target_group)
 			else:
-	 			print "Current file is not valid for RSpec switch file!"
+	 			print("Current file is not valid for RSpec switch file!")
 
 	def open_project_file(self, file_matcher, window, group=-1):
 		for root, dirs, files in os.walk(window.folders()[0]):
 			for f in files:
 				if re.search(r"\.rb$", f):
 					cur_file = os.path.join(root, f)
-					# print "Assessing: " + cur_file
+					# print("Assessing: " + cur_file)
 					if file_matcher.search(cur_file):
 						file_view = window.open_file(os.path.join(root, f))
 						if group >= 0: # don't set the view unless specified

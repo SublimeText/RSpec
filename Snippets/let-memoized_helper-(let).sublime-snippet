@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[let(:${1:variable_name}) { ${3:${2:ClassName}.new} }]]></content>
+    <tabTrigger>let</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>let - Rspec memoized helper</description>
+</snippet>

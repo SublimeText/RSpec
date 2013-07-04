@@ -1,11 +1,11 @@
 import sublime, sublime_plugin, time
 import re
-import shared
+from RSpec import shared
 
 _patterns = dict((k, re.compile('_*' + v)) for (k, v)
                     in dict(allcamel=r'(?:[A-Z]+[a-z0-9]*)+$',
                             trailingcamel=r'[a-z]+(?:[A-Z0-9]*[a-z0-9]*)+$',
-                            underscores=r'(?:[a-z]+_*)+[a-z0-9]+$').iteritems())
+                            underscores=r'(?:[a-z]+_*)+[a-z0-9]+$').items())
 
 _caseTransition = re.compile('([A-Z][a-z]+)')
 

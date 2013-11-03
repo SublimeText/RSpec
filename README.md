@@ -4,17 +4,25 @@ Description
 
 Package Installation
 ====================
-### Mac OSX
-    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
-    git clone git://github.com/SublimeText/RSpec.git
-### Linux
-    cd ~/.config/sublime-text-2/Packages
-    git clone git://github.com/SublimeText/RSpec.git
-### Windows
-    cd "%appdata%\Sublime Text 2\Packages"
-    git clone git://github.com/SublimeText/RSpec.git
+Clone the repository in your Sublime Text 2 Pacakges directory.
 
-When you launch Sublime Text 2, it will pick up the contents of this package so that you can consume the goodness that it provides.
+Snippets
+========
+
+
+```Ruby
+# desc
+describe 'description' do
+  ...
+end
+```
+
+```Ruby
+# con
+context 'description' do
+  ...
+end
+```
 
 Features
 ========

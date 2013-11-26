@@ -1,22 +1,20 @@
-Description
-===========
-[RSpec](http://rspec.info/) is a BDD (Behavioral-Driven Development) testing framework for Ruby. This package adds support to Sublime Text 2 for testing Ruby applications with RSpec.
+# RSpec Package for Sublime Text 2/3
 
-Package Installation
-====================
-### Mac OSX
-    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
-    git clone git://github.com/SublimeText/RSpec.git
-### Linux
-    cd ~/.config/sublime-text-2/Packages
-    git clone git://github.com/SublimeText/RSpec.git
-### Windows
-    cd Users/<user>/AppData/Roaming/Sublime\ Text\ 2/Packages/
-    git clone git://github.com/SublimeText/RSpec.git
+## Description
 
-When you launch Sublime Text 2, it will pick up the contents of this package so that you can consume the goodness that it provides.
+[RSpec](rspec) is a BDD (Behavior-Driven Development) testing framework for Ruby. This package adds support to Sublime Text 2 and 3 for specifying and testing Ruby applications with RSpec. It contains extra syntax highlighting and many snippets.
 
-Features
-========
-* RSpec.sublime-build for executing unit tests for the active module via the S2 *Build* command
+[rspec]: http://rspec.info/
+
+## Installation
+
+Recommended: install via [Package Control][package-control].
+
+Alternative (especially if you want to develop the package further): Clone (your fork of) the repository into your Sublime Text Pacakges directory.
+
+[package-control]: https://sublime.wbond.net/
+
+## Features
+
+* RSpec.sublime-build for executing unit tests for the active module via the Sublime Text *Build* command
     * You must assign the builder for your project to 'Ceedling'

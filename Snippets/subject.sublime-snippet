@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[subject(:${1:variable_name}) { ${3:${2:ClassName}.new} }]]></content>
+    <content><![CDATA[subject(:${1:subject}) { ${3:${2:ClassName}.new} }]]></content>
     <tabTrigger>subject</tabTrigger>
     <scope>source.ruby.rspec</scope>
     <description>subject - Rspec subject helper</description>

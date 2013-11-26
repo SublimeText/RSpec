@@ -4,5 +4,5 @@
 end]]></content>
     <tabTrigger>des</tabTrigger>
     <scope>source.ruby.rspec</scope>
-    <description>context 'description' do … end</description>
+    <description>describe 'description' do … end</description>
 </snippet>

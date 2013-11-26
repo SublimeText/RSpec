@@ -2,5 +2,5 @@
     <content><![CDATA[expect(${1:subject}).to match(/${2:regexp}/)$0]]></content>
     <tabTrigger>expmatch</tabTrigger>
     <scope>source.ruby.rspec</scope>
-    <description>expect(obj) match</description>
+    <description>expect(obj).to match</description>
 </snippet>

@@ -2,5 +2,5 @@
     <content><![CDATA[expect { ${1:action} }.to raise_error(${2:Error})$0]]></content>
     <tabTrigger>expraise</tabTrigger>
     <scope>source.ruby.rspec</scope>
-    <description>expect { action } raise</description>
+    <description>expect { action }.to raise</description>
 </snippet>

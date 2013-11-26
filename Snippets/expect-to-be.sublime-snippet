@@ -2,5 +2,5 @@
     <content><![CDATA[expect(${1:subject}).to be$0]]></content>
     <tabTrigger>expbe</tabTrigger>
     <scope>source.ruby.rspec</scope>
-    <description>expect(obj) be</description>
+    <description>expect(obj).to be</description>
 </snippet>

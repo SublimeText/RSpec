@@ -2,5 +2,5 @@
     <content><![CDATA[expect(${1:subject}).to eql(${2:value})$0]]></content>
     <tabTrigger>expeql</tabTrigger>
     <scope>source.ruby.rspec</scope>
-    <description>expect(obj) eql(value)</description>
+    <description>expect(obj).to eql(value)</description>
 </snippet>

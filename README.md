@@ -30,10 +30,10 @@ end
 it { should ... }
 ```
 
-## Fabricators
+## Let
 ```Ruby
-# letf
-let(:fabricator) { Fabricate.build(:fabricator) }
+# let
+let(:variable) { ClassName.new }
 ```
 
 ## Expectations

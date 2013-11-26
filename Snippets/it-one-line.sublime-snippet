@@ -2,5 +2,5 @@
     <content><![CDATA[it { ${2:should ${1:matcher}} }$0]]></content>
     <tabTrigger>iti</tabTrigger>
     <scope>source.ruby.rspec</scope>
-    <description>it { }</description>
+    <description>it { should something }</description>
 </snippet>

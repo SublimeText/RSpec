@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[expect(${1:collaborator}).to have_received(:${2:message})${3:.with(${4:args})}$0]]></content>
+    <tabTrigger>exprec</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>expect(object).to have_received(message)</description>
+</snippet>

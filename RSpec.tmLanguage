@@ -52,7 +52,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\.)\b(before|after|subject|let)\b(?![?!])</string>
+			<string>(?&lt;!\.)\b(before\b|after\b|subject!?|let!?)</string>
 			<key>name</key>
 			<string>keyword.other.rspec</string>
 		</dict>
@@ -82,10 +82,15 @@
 		<key>behaviour</key>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(describe|context|feature)\b</string>
+			<string>^\s*(?:(RSpec)\.)?(describe|context|feature)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.ruby</string>
+				</dict>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.other.rspec.behaviour</string>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[expect {${2: ${1:expression} }}.to ${3:matcher}]]></content>
+    <tabTrigger>expto</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>expect { expression }.to something</description>
+</snippet>

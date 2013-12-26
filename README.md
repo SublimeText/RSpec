@@ -11,7 +11,7 @@ Package Installation
     cd ~/.config/sublime-text-2/Packages
     git clone git://github.com/SublimeText/RSpec.git
 ### Windows
-    cd Users/<user>/AppData/Roaming/Sublime\ Text\ 2/Packages/
+    cd "%appdata%\Sublime Text 2\Packages"
     git clone git://github.com/SublimeText/RSpec.git
 
 When you launch Sublime Text 2, it will pick up the contents of this package so that you can consume the goodness that it provides.

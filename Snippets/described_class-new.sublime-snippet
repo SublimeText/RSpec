@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[described_class.new($1)]]></content>
+    <tabTrigger>decln</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>described_class.new</description>
+</snippet>

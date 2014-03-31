@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[instance_double('${1:class}')]]></content>
+    <content><![CDATA[instance_double('${1:ClassName}'${2:, ${3:method: nil}}) $0]]></content>
     <tabTrigger>idou</tabTrigger>
     <scope>source.ruby.rspec</scope>
     <description>instance_double('class')</description>

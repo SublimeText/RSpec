@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:var} = mock("${2:mock_name}"${3:, :null_object =&gt; true})$0</string>
+	<string>${1:var} = mock('${2:mock_name}'${3:, :null_object =&gt; true})$0</string>
 	<key>name</key>
 	<string>mock</string>
 	<key>scope</key>

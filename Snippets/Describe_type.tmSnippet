@@ -4,7 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>describe ${1:Type} do
-  ${2:it "${3:does something}" do
+  ${2:it '${3:does something}' do
     $0
   end}
 end</string>

@@ -4,7 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>spec.rb</string>
+		<string>rb</string>
 	</array>
 	<key>foldingStartMarker</key>
 	<string>(?x)^

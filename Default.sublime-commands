@@ -2,5 +2,9 @@
   {
     "caption": "RSpec: open corresponding file",
     "command": "open_rspec_file"
+  },
+  {
+    "caption": "RSpec: create new module",
+    "command": "rspec_create_module"
   }
 ]

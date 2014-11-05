@@ -16,5 +16,10 @@ Alternative (especially if you want to develop the package further): Clone (your
 
 ## Features
 
-* RSpec.sublime-build for executing unit tests for the active module via the Sublime Text *Build* command
-    * You must assign the builder for your project to 'Ceedling'
+* RSpec.tmLanguage: syntax rules sepcially for RSpec
+   * RSpec plugin automatically uses *RSpec language syntax* when you are in a RSpec file
+* RSpec.sublime-build: executing unit tests for the active module via the Sublime Text *Build* command
+   * it chooses *RSpec* as the build command automatically when *RSpec* syntax is applied to the file
+* Command to create a new module and the spec for the module at the same time
+* Command to go to the corresponding spec / source file (shortcut: ctrl/command + .)
+* Large amount of *RSpec* snippets

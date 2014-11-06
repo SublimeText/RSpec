@@ -42,4 +42,5 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
         for folder in self.window.folders():
             if not file_path.startswith(folder):
                 continue
-            yield from os.walk(folder)
+            for dir_data in os.walk(folder):
+                yield dir_data

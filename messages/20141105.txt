@@ -1,7 +1,0 @@
-======== 20141105 ========
-
-* Added the ability to find the spec/source file when multiple "root" folders exist in the project
-
-Please file bug reports at https://github.com/SublimeText/RSpec/issues
-
-This release was done by Po Chen (@princemaple), feel free to @ when reporting bugs and sending PRs.

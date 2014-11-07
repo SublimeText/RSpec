@@ -1,4 +1,12 @@
-### 20141104
+### 2014-11-06
+
+* Package switched to use tag release
+
+### 2014-11-05
+
+* Added the ability to find the spec/source file when multiple "root" folders exist in the project
+
+### 2014-11-04
 
 * Build in spec file now auto choose rspec build (Thanks @osrocha)
 * Added feature and scenario snippets (Thanks @jaredmoody)

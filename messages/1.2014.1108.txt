@@ -1,0 +1,13 @@
+============ 2014-11-08 =============
+
+* Improved source / spec switching
+    - it is now faster and more precise in rails and gem projects
+    - handles namespace correctly
+
+    e.g. when trying to switch to the spec for "project/app/controllers/admin/user_controller.rb"
+    RSpec will correctly switch to "project/spec/controllers/admin/user_controller_spec.rb"
+    instead of the one without "/admin", like it previously did
+
+Please file bug reports at https://github.com/SublimeText/RSpec/issues
+
+This release was done by Po Chen (@princemaple), feel free to @ when reporting bugs and sending PRs.

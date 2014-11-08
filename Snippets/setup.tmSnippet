@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>before(${1::each}) do
+	<string>before do
   $0
 end</string>
 	<key>name</key>

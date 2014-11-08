@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>describe ${1:Type}, '${2:description}' do
-  ${3:it '${4:does something}' do
+	<string>describe ${1:Type}, "${2:description}" do
+  ${3:it "${4:does something}" do
     $0
   end}
 end</string>

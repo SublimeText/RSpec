@@ -1,0 +1,14 @@
+* Added a bunch of RSpec 3 snippets (Thanks @ronny)
+* Source / Spec switching (fast-and-precise mode) now supports structure like
+  - lib/path/to/code.rb
+  - spec/lib/path/to/code_spec.rb
+
+  * previously fast-and-precise mode only supports
+    - lib/path/to/code.rb
+    - spec/path/to/code_spec.rb
+    and
+    - app/path/to/code.rb
+    - spec/path/to/code_spec.rb
+  * note: now for "lib", the spec folder may or may not contain nesting "lib"
+    - when having a "lib" folder in your project
+    - you would have "spec/lib/..." if it's Rails, and "spec/..." if it's Gem

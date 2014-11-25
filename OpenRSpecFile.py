@@ -10,6 +10,8 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
             return
 
         current_file_path = self.window.active_view().file_name()
+        if current_file_path is None: return
+
         print("Current file: " + current_file_path)
 
         if current_file_path.endswith(".rb"):
@@ -37,17 +39,29 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
                     return self.switch_to(os.path.join(path, filename))
         print("RSpec: No matching files found")
 
+    def spec_paths(self, file_path):
+        return [
+            self.batch_replace(file_path,
+                (r"\b(?:app|lib)\b", "spec"), (r"\b(\w+)\.rb", r"\1_spec.rb")),
+            self.batch_replace(file_path,
+                (r"\blib\b", os.path.join("spec", "lib")), (r"\b(\w+)\.rb", r"\1_spec.rb"))
+        ]
+
+    def code_paths(self, file_path):
+        file_path = re.sub(r"\b(\w+)_spec\.rb$", r"\1.rb", file_path)
+        return [
+            re.sub(r"\bspec\b", "app", file_path),
+            re.sub(r"\bspec\b", "lib", file_path),
+            re.sub(r"\b{}\b".format(os.path.join("spec", "lib")), "lib", file_path)
+        ]
+
     def quick_find(self, file_path):
-        spec_regex = re.compile(r"\bspec\b")
-        if re.search(r"\b(?:app|lib)\b", file_path):
-            file_path = self.batch_replace(file_path,
-                    (r"\b(?:app|lib)\b", "spec"), (r"\b(\w+)\.rb", r"\1_spec.rb"))
-            if os.path.exists(file_path):
-                return self.switch_to(file_path)
-        elif spec_regex.search(file_path):
-            file_path = re.sub(r"\b(\w+)_spec\.rb", r"\1.rb", file_path)
-            for path in ["app", "lib"]:
-                path = spec_regex.sub(path, file_path)
+        if re.search(r"\bspec\b|_spec\.rb$", file_path):
+            for path in self.code_paths(file_path):
+                if os.path.exists(path):
+                    return self.switch_to(path)
+        elif re.search(r"\b(?:app|lib)\b", file_path):
+            for path in self.spec_paths(file_path):
                 if os.path.exists(path):
                     return self.switch_to(path)
         print("RSpec: quick find failed, doing regular find")

@@ -10,13 +10,13 @@
 
 Recommended: install via [Package Control][package-control].
 
-Alternative (especially if you want to develop the package further): Clone (your fork of) the repository into your Sublime Text Pacakges directory.
+Alternative (especially if you want to develop the package further): Clone (your fork of) the repository into your Sublime Text Packages directory.
 
 [package-control]: https://sublime.wbond.net/
 
 ## Features
 
-* RSpec.tmLanguage: syntax rules sepcially for RSpec
+* RSpec.tmLanguage: syntax rules made specially for RSpec
    * RSpec plugin automatically uses *RSpec language syntax* when you are in a RSpec file
 * RSpec.sublime-build: executing unit tests for the active module via the Sublime Text *Build* command
    * it chooses *RSpec* as the build command automatically when *RSpec* syntax is applied to the file

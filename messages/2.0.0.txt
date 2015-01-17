@@ -1,0 +1,30 @@
+module-spec pair creation seemed to have never worked in ST3
+
+RSpec plugin v2 is shipped with the fixed and improved new module-spec pair creation
+
+* Command Palette -> RSpec: create new module
+* input the name of the class with optional namespace (see below)
+
+* input `A/B/C` or `A::B::C` will generate
+
+*c.rb*
+
+```ruby
+module A
+  module B
+    class C
+
+    end
+  end
+end
+```
+
+*c_spec.rb*
+
+```ruby
+require 'spec_helper'
+
+describe A::B::C do
+
+end
+```

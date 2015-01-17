@@ -1,3 +1,11 @@
+### 2.0.0
+
+* Fixed and improved new module-spec pair creation
+
+### 2014-11-07
+
+* Minor typo / quotes fixes
+
 ### 2014-11-06
 
 * Package switched to use tag release

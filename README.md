@@ -2,7 +2,7 @@
 
 ## Description
 
-[RSpec](rspec) is a BDD (Behavior-Driven Development) testing framework for Ruby. This package adds support to Sublime Text 2 and 3 for specifying and testing Ruby applications with RSpec. It contains extra syntax highlighting and many snippets.
+[RSpec][rspec] is a BDD (Behavior-Driven Development) testing framework for Ruby. This package adds support to Sublime Text 2 and 3 for specifying and testing Ruby applications with RSpec. It contains extra syntax highlighting and many snippets.
 
 [rspec]: http://rspec.info/
 

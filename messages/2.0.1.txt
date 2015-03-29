@@ -1,0 +1,6 @@
+Removed `ctrl+atl+n` keymap, in case you still want it:
+  { "keys": ["super+alt+n"], "command": "rspec_create_module", "args": {} }
+Note: there is a command, which you can invoke in command palette, for it
+
+Added a new build file that uses `bundle exec`
+  please leave feedbacks at https://github.com/SublimeText/RSpec/issues

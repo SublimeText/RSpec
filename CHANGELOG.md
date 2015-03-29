@@ -1,3 +1,8 @@
+### 2.0.1
+
+* Removed `ctrl+atl+n` keymap (command: `rspec_create_module`)
+* Added a new build file that uses `bundle exec`
+
 ### 2.0.0
 
 * Fixed and improved new module-spec pair creation

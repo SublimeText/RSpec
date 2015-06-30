@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[allow(${1:collaborator}).to receive(:${2:message})${3:.with(${4:args})}$0]]></content>
+    <content><![CDATA[allow(${1:collaborator}).to receive(:${2:message})${3:.and_return(${4:result})}$0]]></content>
     <tabTrigger>allrec</tabTrigger>
     <scope>source.ruby.rspec</scope>
     <description>allow(object).to receive(message)</description>

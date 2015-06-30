@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>Story "${1:title}", %{
+	<string>Story '${1:title}', %{
   As a${2:role}
   I want ${3:feature}
-  So that ${4:value}  
+  So that ${4:value}
 } do
 end</string>
 	<key>name</key>

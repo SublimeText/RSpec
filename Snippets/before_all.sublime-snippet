@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[before(:all) do
+  $0
+end]]></content>
+    <tabTrigger>befa</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>before(:all) do … end</description>
+</snippet>

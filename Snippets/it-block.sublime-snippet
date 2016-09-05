@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[it '${1:does something}' do
-	$0
-end]]></content>
+    <content><![CDATA[it "${1:does something}" do
+        $0
+    end]]></content>
     <tabTrigger>it</tabTrigger>
     <scope>source.ruby.rspec</scope>
-    <description>it 'does something' do … end</description>
+    <description>it "does something" do … end</description>
 </snippet>

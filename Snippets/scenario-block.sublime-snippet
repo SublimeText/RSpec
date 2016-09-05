@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[scenario "${1:when a user}" do
+        $0
+    end]]></content>
+    <tabTrigger>scn</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>scenario "when a user" do … end</description>
+</snippet>

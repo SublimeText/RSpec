@@ -4,10 +4,10 @@
 <dict>
 	<key>content</key>
 	<string>describe ${1:Type} do
-		${2:it "${3:does something}" do
-			$0
-		end}
-	end</string>
+  ${2:it '${3:does something}' do
+    $0
+  end}
+end</string>
 	<key>name</key>
 	<string>describe (type)</string>
 	<key>scope</key>

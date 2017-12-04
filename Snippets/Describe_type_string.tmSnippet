@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>describe ${1:Type}, "${2:description}" do
-		${3:it "${4:does something}" do
-			$0
-		end}
-	end</string>
+	<string>describe ${1:Type}, '${2:description}' do
+  ${3:it '${4:does something}' do
+    $0
+  end}
+end</string>
 	<key>name</key>
 	<string>describe (type, string)</string>
 	<key>scope</key>

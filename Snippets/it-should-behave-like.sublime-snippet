@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[it_should_behave_like ${2:'$1'}$0]]></content>
+    <content><![CDATA[it_should_behave_like ${2:"$1"}$0]]></content>
     <tabTrigger>itsbl</tabTrigger>
     <scope>source.ruby.rspec</scope>
     <description>it_should_behave_like</description>

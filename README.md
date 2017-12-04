@@ -1,7 +1,7 @@
 # RSpec Package for Sublime Text 2/3
 
-## New maintainer required
-@princemaple no longer uses Ruby as his primary language, hence is having little interest in continuing to maintain this project.
+## No Longer Maintained
+If anyone is willing to maintain this package, please file an issue
 
 ## Description
 

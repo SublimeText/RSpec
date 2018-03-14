@@ -1,7 +1,7 @@
 # RSpec Package for Sublime Text 2/3
 
-## No Longer Maintained
-If anyone is willing to maintain this package, please file an issue
+## No longer actively maintained
+If anyone is willing to keep improving this package, please file an issue
 
 ## Description
 

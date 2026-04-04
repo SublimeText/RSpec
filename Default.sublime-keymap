@@ -1,0 +1,13 @@
+[
+	// To enable or change an existing key binding, copy it to the right view and uncomment, if needed.
+	// To change the associated key press, edit the "keys" value.
+	//
+	// Open matching spec file
+	// {
+	//  "keys": [
+	//    "primary+period"
+	//  ],
+	//  "command": "open_rspec_file",
+	//  "args": {}
+	// }
+]

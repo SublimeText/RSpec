@@ -1,4 +1,4 @@
-# RSpec Package for Sublime Text 2/3
+# RSpec Package for Sublime Text
 
 ## No longer actively maintained
 If anyone is willing to keep improving this package, please file an issue
@@ -13,9 +13,13 @@ If anyone is willing to keep improving this package, please file an issue
 
 Recommended: install via [Package Control][package-control].
 
+[package-control]: https://packages.sublimetext.io/
+
 Alternative (especially if you want to develop the package further): Clone (your fork of) the repository into your Sublime Text Packages directory.
 
-[package-control]: https://sublime.wbond.net/
+## Key Bindings
+
+RSpec does not define default key bindings to avoid conflicts with other packages. To add your own, open the Command Palette and execute "Preferences: RSpec Key Bindings".
 
 ## Features
 

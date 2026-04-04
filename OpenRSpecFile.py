@@ -26,10 +26,10 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
             base_name = re.sub(r"_spec$", "", base_name)
 
             if current_file_name.endswith("_spec.rb"):
-                source_matcher = re.compile(r"[/\\]" + base_name + "\.rb$")
+                source_matcher = re.compile(r"[/\\]" + base_name + ".rb$")
                 self.open_project_file(source_matcher, current_file_path)
             else:
-                test_matcher = re.compile(r"[/\\]" + base_name + "_spec\.rb$")
+                test_matcher = re.compile(r"[/\\]" + base_name + "_spec.rb$")
                 self.open_project_file(test_matcher, current_file_path)
         else:
             print("Error: current file is not a ruby file")
@@ -90,3 +90,13 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
             if not file_path.startswith(folder):
                 continue
             yield from os.walk(folder)
+
+    def is_enabled(self):
+        return self._is_ruby_file(self.window.active_view())
+
+    def is_visible(self):
+        return self._is_ruby_file(self.window.active_view())
+
+    def _is_ruby_file(self, view):
+        syntax = view.syntax()
+        return syntax and syntax.scope == "source.ruby"

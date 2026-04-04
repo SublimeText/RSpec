@@ -1,16 +1,19 @@
-import sublime
+import os
+import re
+
 import sublime_plugin
-import re, inspect, os
-from RSpec import shared
+
+from . import shared
+
 
 class OpenRspecFileCommand(sublime_plugin.WindowCommand):
-
     def run(self):
         if not self.window.active_view():
             return
 
         current_file_path = self.window.active_view().file_name()
-        if current_file_path is None: return
+        if current_file_path is None:
+            return
 
         print("Current file: " + current_file_path)
 
@@ -41,10 +44,14 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 
     def spec_paths(self, file_path):
         return [
-            self.batch_replace(file_path,
-                (r"\b(?:app|lib)\b", "spec"), (r"\b(\w+)\.rb", r"\1_spec.rb")),
-            self.batch_replace(file_path,
-                (r"\blib\b", os.path.join("spec", "lib")), (r"\b(\w+)\.rb", r"\1_spec.rb"))
+            self.batch_replace(
+                file_path, (r"\b(?:app|lib)\b", "spec"), (r"\b(\w+)\.rb", r"\1_spec.rb")
+            ),
+            self.batch_replace(
+                file_path,
+                (r"\blib\b", os.path.join("spec", "lib")),
+                (r"\b(\w+)\.rb", r"\1_spec.rb"),
+            ),
         ]
 
     def code_paths(self, file_path):
@@ -52,7 +59,7 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
         return [
             re.sub(r"\bspec\b", "app", file_path),
             re.sub(r"\bspec\b", "lib", file_path),
-            re.sub(r"\b{}\b".format(os.path.join("spec", "lib")), "lib", file_path)
+            re.sub(r"\b{}\b".format(os.path.join("spec", "lib")), "lib", file_path),
         ]
 
     def quick_find(self, file_path):
@@ -74,7 +81,7 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
     def switch_to(self, file_path):
         group = shared.other_group_in_pair(self.window)
         file_view = self.window.open_file(file_path)
-        self.window.run_command("move_to_group", { "group": group })
+        self.window.run_command("move_to_group", {"group": group})
         print("Opened: " + file_path)
         return True
 

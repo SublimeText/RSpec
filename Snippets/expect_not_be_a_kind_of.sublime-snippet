@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[expect(${1:subject}).not_to be_a_kind_of(${2:klass})$0]]></content>
+    <tabTrigger>nbko</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>expect(subject) not be_a_kind_of</description>
+</snippet>

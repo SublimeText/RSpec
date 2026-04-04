@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[twice]]></content>
+    <tabTrigger>tw</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>twice</description>
+</snippet>

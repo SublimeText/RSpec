@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[and_return(${1:value})]]></content>
+    <tabTrigger>anra</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>and_return with args</description>
+</snippet>

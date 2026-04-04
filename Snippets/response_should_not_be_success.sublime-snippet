@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[response.should_not be_success$0]]></content>
+    <tabTrigger>shnbs</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>should_not be_success</description>
+</snippet>

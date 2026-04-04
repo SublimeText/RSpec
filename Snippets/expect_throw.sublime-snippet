@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[expect { throw $1 }.to throw_symbol(:${2:symbol})$0]]></content>
+    <tabTrigger>thr</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>expect throw</description>
+</snippet>

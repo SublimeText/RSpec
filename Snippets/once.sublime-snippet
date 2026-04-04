@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[once]]></content>
+    <tabTrigger>on</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>once</description>
+</snippet>

@@ -1,0 +1,25 @@
+{
+	"cmd": [
+		"bundle",
+		"exec",
+		"rspec"
+	],
+	"name": "Run all specs (Bundler)",
+	"selector": "source.ruby",
+	"file_regex": "# ([A-Za-z:0-9_./ ]+rb):([0-9]+)",
+	"working_dir": "${project_path:${folder:${file_path}}}",
+	"variants": [
+		{
+			"cmd": [
+				"rspec"
+			],
+			"name": "Without bundler",
+			"selector": "source.ruby",
+			"windows": {
+				"cmd": [
+					"rspec.bat"
+				]
+			}
+		},
+	]
+}

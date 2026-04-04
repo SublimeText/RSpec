@@ -1,10 +1,27 @@
 import re
-from textwrap import dedent
 
 import sublime
 import sublime_plugin
 
 from .shared import other_group_in_pair
+
+CLASS_TEMPLATE = """\
+class {name}
+
+end"""
+
+MODULE_TEMPLATE = """\
+module {module}
+{definition}
+end"""
+
+SPEC_TEMPLATE = """\
+require 'spec_helper'
+
+describe {name} do
+
+end
+"""
 
 
 def snake_case(name):
@@ -24,29 +41,13 @@ class GotoLineCommand(sublime_plugin.TextCommand):
 
 class RspecNewModuleCommand(sublime_plugin.TextCommand):
     def run(self, edit, name, namespace):
-        class_template = dedent(
-            """
-            class {name}
-
-            end
-        """.lstrip("\n")
-            .rstrip(" \n")
-            .format(name=name)
-        )
-
-        module_template = dedent(
-            """
-            module {module}
-            {definition}
-            end
-        """.lstrip("\n").rstrip(" \n")
-        )
+        class_template = CLASS_TEMPLATE.format(name=name)
 
         template, level = class_template, len(namespace)
 
         while namespace:
             module = namespace.pop()
-            template = module_template.format(
+            template = MODULE_TEMPLATE.format(
                 module=module, definition=self.indent(template)
             )
 
@@ -59,15 +60,7 @@ class RspecNewModuleCommand(sublime_plugin.TextCommand):
 
 class RspecNewSpecCommand(sublime_plugin.TextCommand):
     def run(self, edit, name):
-        template = dedent(
-            """
-            require 'spec_helper'
-
-            describe {name} do
-
-            end
-        """.strip("\n").format(name=name)
-        )
+        template = SPEC_TEMPLATE.format(name=name)
 
         self.view.insert(edit, 0, template)
         self.view.run_command("goto_line", {"line": 4})
@@ -84,18 +77,16 @@ class RspecCreateModuleCommand(sublime_plugin.WindowCommand):
         *namespace, name = re.split(r"/|::", text.strip(" _/"))
 
         # create the module
-        module = self.window.new_file()
-        module.set_syntax_file("Packages/Ruby/Ruby.tmLanguage")
+        module = self.window.new_file(syntax="scope:source.ruby")
         module.set_name(snake_case(name) + ".rb")
 
         module.run_command("rspec_new_module", {"name": name, "namespace": namespace})
 
         # create the spec
-        spec = self.window.new_file()
+        spec = self.window.new_file(syntax="scope:source.ruby.rspec")
         self.window.run_command(
             "move_to_group", {"group": other_group_in_pair(self.window)}
         )
-        spec.set_syntax_file("Packages/Ruby/Ruby.tmLanguage")
         spec.set_name(snake_case(name) + "_spec.rb")
 
         spec.run_command("rspec_new_spec", {"name": "::".join(namespace + [name])})

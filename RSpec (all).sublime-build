@@ -4,7 +4,10 @@
 		"exec",
 		"rspec"
 	],
-	"name": "Run all specs (Bundler)",
+	"keyfiles": [
+		"Gemfile",
+		"Gemfile.lock"
+	],
 	"selector": "source.ruby",
 	"file_regex": "# ([A-Za-z:0-9_./ ]+rb):([0-9]+)",
 	"working_dir": "${project_path:${folder:${file_path}}}",

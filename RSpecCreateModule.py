@@ -30,7 +30,7 @@ def snake_case(name):
 
 
 class GotoLineCommand(sublime_plugin.TextCommand):
-    def run(self, edit, line, column=0):
+    def run(self, edit, line, column: int=0) -> None:
         pt = self.view.text_point(line - 1, column)
 
         self.view.sel().clear()
@@ -40,7 +40,7 @@ class GotoLineCommand(sublime_plugin.TextCommand):
 
 
 class RspecNewModuleCommand(sublime_plugin.TextCommand):
-    def run(self, edit, name, namespace):
+    def run(self, edit, name, namespace) -> None:
         class_template = CLASS_TEMPLATE.format(name=name)
 
         template, level = class_template, len(namespace)
@@ -54,12 +54,12 @@ class RspecNewModuleCommand(sublime_plugin.TextCommand):
         self.view.insert(edit, 0, template)
         self.view.run_command("goto_line", {"line": 2 + level, "column": level * 2})
 
-    def indent(self, text, space=2):
+    def indent(self, text, space: int=2):
         return "\n".join(" " * space + line for line in text.split("\n"))
 
 
 class RspecNewSpecCommand(sublime_plugin.TextCommand):
-    def run(self, edit, name):
+    def run(self, edit, name) -> None:
         template = SPEC_TEMPLATE.format(name=name)
 
         self.view.insert(edit, 0, template)
@@ -67,10 +67,10 @@ class RspecNewSpecCommand(sublime_plugin.TextCommand):
 
 
 class RspecCreateModuleCommand(sublime_plugin.WindowCommand):
-    def run(self):
+    def run(self) -> None:
         self.window.show_input_panel("Enter module name:", "", self.on_done, None, None)
 
-    def on_done(self, text):
+    def on_done(self, text) -> None:
         if not text:
             return
 

@@ -9,7 +9,7 @@ from . import shared
 
 
 class RspecOpenSourceOrSpecCommand(sublime_plugin.WindowCommand):
-    def run(self):
+    def run(self) -> None:
         view = self.window.active_view()
         if not view:
             return
@@ -77,14 +77,14 @@ class RspecOpenSourceOrSpecCommand(sublime_plugin.WindowCommand):
             string = re.sub(target, replacement, string)
         return string
 
-    def switch_to(self, file_path):
+    def switch_to(self, file_path) -> bool:
         group = shared.other_group_in_pair(self.window)
         self.window.open_file(file_path)
         self.window.run_command("move_to_group", {"group": group})
         print("Opened: " + file_path)
         return True
 
-    def walk_project_folder(self, file_path):
+    def walk_project_folder(self, file_path) -> None:
         for folder in self.window.folders():
             if not file_path.startswith(folder):
                 continue

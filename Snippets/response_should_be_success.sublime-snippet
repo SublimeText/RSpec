@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[response.should be_success$0]]></content>
+    <tabTrigger>shbs</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>should be_success</description>
+</snippet>

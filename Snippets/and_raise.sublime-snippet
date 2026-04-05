@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[and_raise(${1:exception})]]></content>
+    <tabTrigger>anr</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>and_raise</description>
+</snippet>

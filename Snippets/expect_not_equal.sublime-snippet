@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[expect(${1:subject}).not_to equal(${2:value})$0]]></content>
+    <tabTrigger>nequal</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>expect not equal</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[ordered]]></content>
+    <tabTrigger>ord</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>ordered</description>
+</snippet>

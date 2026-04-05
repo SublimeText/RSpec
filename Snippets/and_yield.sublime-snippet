@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[and_yield(${1:values})]]></content>
+    <tabTrigger>any</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>and_yield</description>
+</snippet>

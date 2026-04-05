@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[and_throw(${1:sym})]]></content>
+    <tabTrigger>ant</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>and_throw</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[and_return { $1 }]]></content>
+    <tabTrigger>anrb</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>and_return with block</description>
+</snippet>

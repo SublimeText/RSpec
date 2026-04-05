@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[at_most(${1:n}).times]]></content>
+    <tabTrigger>atm</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>at_most</description>
+</snippet>

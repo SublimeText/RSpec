@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[after(${1::each}) do
+  $0
+end]]></content>
+    <tabTrigger>aft</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>after</description>
+</snippet>

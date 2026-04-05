@@ -9,5 +9,13 @@
 	//  ],
 	//  "command": "rspec_toggle_source_or_spec",
 	//  "args": {}
+	// },
+	// Create new module and spec
+	// {
+	//  "keys": [
+	//    "primary+shift+period"
+	// ]
+	// 	"command": "rspec_create_module"
+	//  "args": {}
 	// }
 ]

@@ -25,6 +25,7 @@ RSpec does not define default key bindings to avoid conflicts with other package
 * RSpec (open spec).sublime-build: executing unit tests for the active module via the Sublime Text *Build* command
    * it chooses *RSpec* as the build command automatically when *RSpec* syntax is applied to the file
 * RSpec (all specs).sublime-build: executing all unit tests for the active project via the Sublime Text *Build* command
+* Command to run the currently selected line only (supports multiple selections)
 * Command to create a new module and the spec for the module at the same time
 * Command to go to the corresponding spec / source file (available in the Command Palette, can be configured to a keyboard shortcut)
 * Large amount of *RSpec* snippets

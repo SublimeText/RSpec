@@ -1,3 +1,8 @@
+
+> [!IMPORTANT]
+> This CHANGELOG is outdated, see the Github Releases page for tracking changes.
+
+
 ### 2.0.1
 
 * Removed `ctrl+atl+n` keymap (command: `rspec_create_module`)

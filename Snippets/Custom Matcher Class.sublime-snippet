@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[RSpec::Matchers.define :${1:be_a_multiple_of} do |expected|
+  match do |${2:actual}|
+    ${3:$2 % expected == 0}
+  end
+  failure_message do |${3:actual}|
+    "expected that #{${2:actual}} would ${4:be a multiple of} #{expected}"
+  end
+  failure_message_when_negated do |${3:actual}|
+    "expected that #{${2:actual}} would not ${4:be a multiple of} #{expected}"
+  end
+end]]></content>
+    <tabTrigger>matc</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>Custom Matcher Class</description>
+</snippet>

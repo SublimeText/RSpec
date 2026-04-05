@@ -1,8 +1,0 @@
-<snippet>
-  <content><![CDATA[before(:context) do
-  $0
-end]]></content>
-  <tabTrigger>befc</tabTrigger>
-  <scope>source.ruby.rspec</scope>
-  <description>before(:context) do … end</description>
-</snippet>

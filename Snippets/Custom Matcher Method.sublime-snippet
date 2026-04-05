@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[matcher :${1:be_a_multiple_of} do |expected|
+  match do |${2:actual}|
+    ${3:$2 % expected == 0}
+  end
+end]]></content>
+    <tabTrigger>mat</tabTrigger>
+    <scope>source.ruby.rspec</scope>
+    <description>Custom Matcher</description>
+</snippet>

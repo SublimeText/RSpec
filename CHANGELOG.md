@@ -1,6 +1,6 @@
 
 > [!IMPORTANT]
-> This CHANGELOG is outdated, see the Github Releases page for tracking changes.
+> This CHANGELOG is outdated, see the Github Releases page for tracking changes or the messages/ directory.
 
 
 ### 2.0.1

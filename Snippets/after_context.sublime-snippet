@@ -1,8 +1,0 @@
-<snippet>
-  <content><![CDATA[after(:context) do
-  $0
-end]]></content>
-  <tabTrigger>aftc</tabTrigger>
-  <scope>source.ruby.rspec</scope>
-  <description>after(:context) do … end</description>
-</snippet>

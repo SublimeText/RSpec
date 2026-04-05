@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[expect { throw $1 }.to_not throw_symbol(:${2:symbol})$0]]></content>
+    <content><![CDATA[expect { throw $1 }.not_to throw_symbol(:${2:symbol})$0]]></content>
     <tabTrigger>nthr</tabTrigger>
     <scope>source.ruby.rspec</scope>
     <description>expect not throw</description>

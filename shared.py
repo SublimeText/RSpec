@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 
-def other_group_in_pair(window):
+def other_group_in_pair(window: sublime.Window):
     """Returns the neighbour focus group for the current window."""
     if window.active_group() % 2 == 0:
         target_group = window.active_group() + 1

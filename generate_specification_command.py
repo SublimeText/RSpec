@@ -9,7 +9,7 @@ class RspecGenerateSpecificationCommand(sublime_plugin.WindowCommand):
             return
 
         symbols = view.symbol_regions()
-        result = []
+        result: list[str] = []
         for symbol in symbols:
             # Sublime automatically assigns NAMESPACE for "RSpec.describe" format
             # https://github.com/sublimehq/sublime_text/issues/3315
@@ -27,4 +27,4 @@ class RspecGenerateSpecificationCommand(sublime_plugin.WindowCommand):
             return False
 
         syntax = view.syntax()
-        return syntax and syntax.scope == "source.ruby.rspec"
+        return syntax is not None and syntax.scope == "source.ruby.rspec"

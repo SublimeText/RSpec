@@ -94,10 +94,6 @@ class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
         view = self.window.active_view()
         return view and self._is_ruby_file(view)
 
-    def is_visible(self):
-        view = self.window.active_view()
-        return view and self._is_ruby_file(view)
-
     def _is_ruby_file(self, view: sublime.View):
         syntax = view.syntax()
         return syntax and syntax.scope in ("source.ruby", "source.ruby.rspec")

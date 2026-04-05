@@ -29,3 +29,4 @@ RSpec does not define default key bindings to avoid conflicts with other package
 * Command to go to the corresponding spec / source file (available in the Command Palette, can be configured to a keyboard shortcut)
 * Large amount of *RSpec* snippets
 * Symbol support: use Goto Symbol... inside an RSpec file and you will get a menu with the specification as you've defined it
+   * You can also generate a structured document of a spec file with the "RSpec: Generate specification" command

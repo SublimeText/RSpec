@@ -15,5 +15,9 @@
 	{
 		"caption": "RSpec: Create new module",
 		"command": "rspec_create_module"
+	},
+	{
+		"caption": "RSpec: Generate specification",
+		"command": "rspec_generate_specification",
 	}
 ]

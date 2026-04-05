@@ -19,8 +19,10 @@ Report bugs or request features in the Github repo: https://github.com/SublimeTe
 
 
 
-# Other improvements
+# Other improvements and new features
 
 - Added improved syntax, courtesy of @themilkman
+	- Extended to include all RSpec matchers available in the latest version (3.13)
 - Scope commands so they don't appear when they are not relevant.
 - Fixed support for symbol lists. Now doing "Goto Symbol" inside an RSpec file will basically show the specification.
+- Added a command, "RSpec: Generate specification" that generates the specification in a new tab.

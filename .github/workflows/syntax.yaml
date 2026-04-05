@@ -3,11 +3,13 @@ name: Syntax Tests
 on:
   push:
     paths:
+      - ".github/workflows/syntax.yaml"
       - "**.sublime-syntax"
       - "**/syntax_test_*"
       - "**.tmPreferences"
   pull_request:
     paths:
+      - ".github/workflows/syntax.yaml"
       - "**.sublime-syntax"
       - "**/syntax_test_*"
       - "**.tmPreferences"
@@ -21,9 +23,12 @@ jobs:
       matrix:
         include:
           - build: latest
-          - build: stable # Fetches the binary for the latest stable build
+            packages: master
+          - build: stable
+            packages: binary
     steps:
       - uses: actions/checkout@v6
       - uses: SublimeText/syntax-test-action@v2
         with:
           build: ${{ matrix.build }}
+          default_packages: ${{ matrix.packages }}

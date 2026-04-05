@@ -1,41 +1,40 @@
 import os
 import re
+from pathlib import Path
 
+import sublime
 import sublime_plugin
 
 from . import shared
 
 
-class OpenRspecFileCommand(sublime_plugin.WindowCommand):
+class RspecOpenSourceOrSpecCommand(sublime_plugin.WindowCommand):
     def run(self):
-        if not self.window.active_view():
+        view = self.window.active_view()
+        if not view:
             return
 
-        current_file_path = self.window.active_view().file_name()
+        current_file_path = view.file_name()
         if current_file_path is None:
             return
 
-        print("Current file: " + current_file_path)
+        if self.quick_find(current_file_path):
+            return
 
-        if current_file_path.endswith(".rb"):
-            if self.quick_find(current_file_path):
-                return
+        path = Path(current_file_path)
+        current_file_name = path.name
+        base_name = path.stem
+        base_name = re.sub(r"_spec$", "", base_name)
 
-            current_file_name = re.search(r"[/\\]([\w.]+)$", current_file_path).group(1)
-            base_name = re.search(r"(\w+)\.rb$", current_file_name).group(1)
-            base_name = re.sub(r"_spec$", "", base_name)
-
-            if current_file_name.endswith("_spec.rb"):
-                source_matcher = re.compile(r"[/\\]" + base_name + r"\.rb$")
-                self.open_project_file(source_matcher, current_file_path)
-            else:
-                test_matcher = re.compile(r"[/\\]" + base_name + r"_spec\.rb$")
-                self.open_project_file(test_matcher, current_file_path)
+        if current_file_name.endswith("_spec.rb"):
+            source_matcher = re.compile(r"[/\\]" + base_name + r"\.rb$")
+            self.open_project_file(source_matcher, current_file_path)
         else:
-            print("Error: current file is not a ruby file")
+            test_matcher = re.compile(r"[/\\]" + base_name + r"_spec\.rb$")
+            self.open_project_file(test_matcher, current_file_path)
 
     def open_project_file(self, file_matcher, file_path):
-        for path, dirs, filenames in self.walk_project_folder(file_path):
+        for path, _, filenames in self.walk_project_folder(file_path):
             for filename in filter(lambda f: f.endswith(".rb"), filenames):
                 current_file = os.path.join(path, filename)
                 if file_matcher.search(current_file):
@@ -80,7 +79,7 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
 
     def switch_to(self, file_path):
         group = shared.other_group_in_pair(self.window)
-        file_view = self.window.open_file(file_path)
+        self.window.open_file(file_path)
         self.window.run_command("move_to_group", {"group": group})
         print("Opened: " + file_path)
         return True
@@ -92,11 +91,13 @@ class OpenRspecFileCommand(sublime_plugin.WindowCommand):
             yield from os.walk(folder)
 
     def is_enabled(self):
-        return self._is_ruby_file(self.window.active_view())
+        view = self.window.active_view()
+        return view and self._is_ruby_file(view)
 
     def is_visible(self):
-        return self._is_ruby_file(self.window.active_view())
+        view = self.window.active_view()
+        return view and self._is_ruby_file(view)
 
-    def _is_ruby_file(self, view):
+    def _is_ruby_file(self, view: sublime.View):
         syntax = view.syntax()
-        return syntax and syntax.scope == "source.ruby"
+        return syntax and syntax.scope in ("source.ruby", "source.ruby.rspec")

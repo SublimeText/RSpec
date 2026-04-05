@@ -7,7 +7,7 @@
 	//  "keys": [
 	//    "primary+period"
 	//  ],
-	//  "command": "open_rspec_file",
+	//  "command": "rspec_open_source_or_spec",
 	//  "args": {}
 	// }
 ]

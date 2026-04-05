@@ -1,0 +1,29 @@
+name: Syntax Tests
+
+on:
+  push:
+    paths:
+      - "**.sublime-syntax"
+      - "**/syntax_test_*"
+      - "**.tmPreferences"
+  pull_request:
+    paths:
+      - "**.sublime-syntax"
+      - "**/syntax_test_*"
+      - "**.tmPreferences"
+
+jobs:
+  syntax_tests:
+    name: Syntax Tests (${{ matrix.build }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        include:
+          - build: latest
+          - build: stable # Fetches the binary for the latest stable build
+    steps:
+      - uses: actions/checkout@v6
+      - uses: SublimeText/syntax-test-action@v2
+        with:
+          build: ${{ matrix.build }}

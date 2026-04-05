@@ -1,2 +1,4 @@
+.git                 export-ignore
+.github              export-ignore
 /tests               export-ignore
 /pyrightconfig.json  export-ignore

@@ -1,0 +1,12 @@
+# SYNTAX TEST "Packages/RSpec/RSpec.sublime-syntax"
+RSpec.describe Some::Tag do
+#              @@@@@@@@@ local-definition
+describe Some::Tag do
+#        @@@@@@@@@ local-definition
+context 'when it rains' do
+#        @@@@@@@@@@@@@ local-definition
+  it 'pours' do
+#     @@@@@ local-definition "  pours"
+  end
+  it 'hangs pending'
+#     @@@@@@@@@@@@@ local-definition "  hangs pending"

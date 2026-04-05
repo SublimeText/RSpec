@@ -9,11 +9,11 @@
 		}
 	},
 	{
-		"caption": "RSpec: open corresponding file",
+		"caption": "RSpec: Open corresponding file",
 		"command": "rspec_toggle_source_or_spec"
 	},
 	{
-		"caption": "RSpec: create new module",
+		"caption": "RSpec: Create new module",
 		"command": "rspec_create_module"
 	}
 ]

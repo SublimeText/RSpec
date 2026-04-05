@@ -1,13 +1,10 @@
 # RSpec Package for Sublime Text
 
-## No longer actively maintained
-If anyone is willing to keep improving this package, please file an issue
-
 ## Description
 
-[RSpec][rspec] is a BDD (Behavior-Driven Development) testing framework for Ruby. This package adds support to Sublime Text 2 and 3 for specifying and testing Ruby applications with RSpec. It contains extra syntax highlighting and many snippets.
+[RSpec][rspec] is a BDD (Behavior-Driven Development) testing framework for Ruby. This package adds support to Sublime Text for specifying and testing Ruby applications with RSpec. It contains extra syntax highlighting and many snippets.
 
-[rspec]: http://rspec.info/
+[rspec]: https://rspec.info/
 
 ## Installation
 
@@ -23,10 +20,11 @@ RSpec does not define default key bindings to avoid conflicts with other package
 
 ## Features
 
-* RSpec.tmLanguage: syntax rules made specially for RSpec
+* Syntax rules made specially for RSpec
    * RSpec plugin automatically uses *RSpec language syntax* when you are in a RSpec file
-* RSpec.sublime-build: executing unit tests for the active module via the Sublime Text *Build* command
+* RSpec (open spec).sublime-build: executing unit tests for the active module via the Sublime Text *Build* command
    * it chooses *RSpec* as the build command automatically when *RSpec* syntax is applied to the file
+* RSpec (all specs).sublime-build: executing all unit tests for the active project via the Sublime Text *Build* command
 * Command to create a new module and the spec for the module at the same time
-* Command to go to the corresponding spec / source file (shortcut: ctrl/command + .)
+* Command to go to the corresponding spec / source file (available in the Command Palette, can be configured to a keyboard shortcut)
 * Large amount of *RSpec* snippets

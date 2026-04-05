@@ -1,0 +1,26 @@
+=> 3.0.0
+
+# Announcement
+
+The RSpec package is maintained again after almost a decade.
+
+Report bugs or request features in the Github repo: https://github.com/SublimeText/RSpec
+
+
+# Breaking changes
+
+**If you had configured any of these, manual action is required**
+
+- Removed default keybinds, trigger "Preferences: RSpec Key Bindings" to re-configure them on if needed.
+- Renamed command `open_rspec_file` to `rspec_open_source_or_spec` to maintain a consistent prefix.
+- Modernised build systems
+	- Use `bundle exec` for all builds.
+	- Smarter detection of when to automatically enable the build system for running one or all specs.
+
+
+
+# Other improvements
+
+- Added improved syntax, courtesy of @themilkman
+- Scope commands so they don't appear when they are not relevant.
+

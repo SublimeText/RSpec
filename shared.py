@@ -11,7 +11,6 @@ def other_group_in_pair(window: sublime.Window):
     return min(target_group, window.num_groups() - 1)
 
 
-# TODO: Call from RspecNewModuleCommand and RspecNewSpecCommand
 class RspecInsertContentCommand(sublime_plugin.TextCommand):
     def run(self, edit: sublime.Edit, text: str = ""):
         self.view.insert(edit, 0, text)

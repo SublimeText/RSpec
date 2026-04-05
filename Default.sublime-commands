@@ -10,7 +10,7 @@
 	},
 	{
 		"caption": "RSpec: open corresponding file",
-		"command": "rspec_open_source_or_spec"
+		"command": "rspec_toggle_source_or_spec"
 	},
 	{
 		"caption": "RSpec: create new module",

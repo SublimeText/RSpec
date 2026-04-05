@@ -12,7 +12,7 @@ Report bugs or request features in the Github repo: https://github.com/SublimeTe
 **If you had configured any of these, manual action is required**
 
 - Removed default keybinds, trigger "Preferences: RSpec Key Bindings" to re-configure them on if needed.
-- Renamed command `open_rspec_file` to `rspec_open_source_or_spec` to maintain a consistent prefix.
+- Renamed command `open_rspec_file` to `rspec_toggle_source_or_spec` to maintain a consistent prefix.
 - Modernised build systems
 	- Use `bundle exec` for all builds.
 	- Smarter detection of when to automatically enable the build system for running one or all specs.

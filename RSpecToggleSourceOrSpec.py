@@ -8,7 +8,7 @@ import sublime_plugin
 from . import shared
 
 
-class RspecOpenSourceOrSpecCommand(sublime_plugin.WindowCommand):
+class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
     def run(self):
         view = self.window.active_view()
         if not view:

@@ -1,7 +1,7 @@
 import os
 import re
 from pathlib import Path
-from typing import Iterator
+from typing import Iterator, cast
 
 import sublime
 import sublime_plugin
@@ -25,21 +25,26 @@ class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
         path = Path(current_file_path)
         current_file_name = path.name
         base_name = path.stem
-        base_name = re.sub(r"_spec$", "", base_name)
 
         if current_file_name.endswith("_spec.rb"):
-            source_matcher = re.compile(r"[/\\]" + base_name + r"\.rb$")
-            self.open_project_file(source_matcher, current_file_path)
+            base_name = re.sub(r"_spec$", "", base_name)
+            target = base_name + ".rb"
+            self.open_project_file(target, current_file_path)
         else:
-            test_matcher = re.compile(r"[/\\]" + base_name + r"_spec\.rb$")
-            self.open_project_file(test_matcher, current_file_path)
+            target = base_name + "_spec.rb"
+            self.open_project_file(target, current_file_path)
 
-    def open_project_file(self, file_matcher: re.Pattern[str], file_path: str):
-        for path, _, filenames in self.walk_project_folder(file_path):
-            for filename in filter(lambda f: f.endswith(".rb"), filenames):
-                current_file = os.path.join(path, filename)
-                if file_matcher.search(current_file):
-                    return self.switch_to(os.path.join(path, filename))
+    def open_project_file(self, target: "str", file_path: str):
+        excluded = cast(
+            "list[str]",
+            sublime.load_settings("Preferences.sublime-settings").get(
+                "folder_exclude_patterns"
+            ),
+        )
+        for path, dirs, filenames in self.walk_project_folder(file_path):
+            dirs[:] = [d for d in dirs if d not in excluded]
+            if target in filenames:
+                return self.switch_to(os.path.join(path, target))
         print("RSpec: No matching files found")
 
     def spec_paths(self, file_path: str):
@@ -62,7 +67,12 @@ class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
             re.sub(r"\b{}\b".format(os.path.join("spec", "lib")), "lib", file_path),
         ]
 
-    def quick_find(self, file_path: str):
+    def quick_find(self, file_path: str) -> bool:
+        """Guesses location of the target based on common Ruby project layouts
+
+        SIDE EFFECT: Opens/focuses a file
+
+        Returns a boolean representing whether or not the file was found"""
         if re.search(r"\bspec\b|_spec\.rb$", file_path):
             for path in self.code_paths(file_path):
                 if os.path.exists(path):
@@ -72,9 +82,9 @@ class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
                 if os.path.exists(path):
                     return self.switch_to(path)
         print("RSpec: quick find failed, doing regular find")
+        return False
 
     def batch_replace(self, string: str, *pairs: "tuple[str, str]") -> str:
-        string = ""
         for target, replacement in pairs:
             string = re.sub(target, replacement, string)
         return str(string)

@@ -21,6 +21,9 @@ Report bugs or request features in the Github repo: https://github.com/SublimeTe
 
 # Other improvements and new features
 
+- General performance improvements to the command to toggle between spec and source.
+	- In the case where a slow search has to be performed (non-standard layouts), the command now
+	  respects your global "folder_exclude_patterns" setting.
 - Added improved syntax, courtesy of @themilkman
 	- Extended to include all RSpec matchers available in the latest version (3.13)
 - Scope commands so they don't appear when they are not relevant.

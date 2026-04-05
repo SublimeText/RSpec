@@ -9,7 +9,7 @@
 		}
 	},
 	{
-		"caption": "RSpec: Open corresponding file",
+		"caption": "RSpec: Toggle source/spec",
 		"command": "rspec_toggle_source_or_spec"
 	},
 	{
@@ -19,5 +19,9 @@
 	{
 		"caption": "RSpec: Generate specification",
 		"command": "rspec_generate_specification",
+	},
+	{
+		"caption": "RSpec: Test current line",
+		"command": "rspec_test_current_line",
 	}
 ]

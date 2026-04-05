@@ -1,0 +1,14 @@
+{
+	"cmd": [
+		"bundle",
+		"exec",
+		"rspec"
+	],
+	"keyfiles": [
+		"Gemfile",
+		"Gemfile.lock"
+	],
+	"selector": "source.ruby",
+	"file_regex": "rspec ([A-Za-z0-9_.\/ ]+rb):([0-9]+) #()(.+)$",
+	"working_dir": "${project_path:${folder:${file_path}}}",
+}

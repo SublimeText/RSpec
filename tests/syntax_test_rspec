@@ -1,0 +1,53 @@
+# SYNTAX TEST "Packages/RSpec/RSpec.sublime-syntax"
+describe Some::Tag do
+#<- meta.rspec.behaviour keyword.other.rspec.behaviour
+#^^^^^^^ keyword.other.rspec.behaviour
+#^^^^^^^^^^^^^^^^^^^^ meta.rspec.behaviour
+
+describe "something" do
+#<- meta.rspec.behaviour keyword.other.rspec.behaviour
+#^^^^^^^ keyword.other.rspec.behaviour
+#^^^^^^^^^^^^^^^^^^^^^^ meta.rspec.behaviour
+
+RSpec.describe Some::Tag do
+#<- meta.rspec.behaviour support.module.rspec
+#^^^^ support.module.rspec
+#     ^^^^^^^^ keyword.other.rspec.behaviour
+#^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.rspec.behaviour
+let(:config) { double('config') }
+#<- keyword.other.rspec
+#^^ keyword.other.rspec
+#              ^^^^^^ keyword.other.rspec
+
+subject { described_class.new(opts) }
+#<- keyword.other.rspec
+#^^^^^^ keyword.other.rspec
+#         ^^^^^^^^^^^^^^^ variable.other.rspec
+
+before :each do
+#<- keyword.other.rspec
+#^^^^^ keyword.other.rspec
+
+  allow(JSON).to receive(:parse).and_return config
+# ^^^^^ keyword.other.rspec
+
+# Scoping the indentation helps with the symbols
+    context 'when it rains' do
+#   ^^^^^^^ keyword.other.rspec
+#<- meta.rspec.behaviour
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.rspec.behaviour
+
+      it 'pours' do
+#     ^^ keyword.other.rspec
+#<- meta.rspec.example
+#^^^^^^^^^^^^^^^^^^ meta.rspec.example
+
+        expect(subject[:test]).to eq(:any)
+#       ^^^^^^ keyword.other.rspec
+#                              ^^ keyword.other.rspec.expectation
+#                                 ^^ keyword.other.rspec.expectation
+
+      it 'hangs pending'
+#     ^^ keyword.other.rspec
+#<- meta.rspec.pending
+#^^^^^^^^^^^^^^^^^^^^^^^ meta.rspec.pending

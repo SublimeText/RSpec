@@ -1,6 +1,8 @@
 # SYNTAX TEST "Packages/RSpec/RSpec.sublime-syntax"
 RSpec.describe Some::Tag do
 #              @@@@@@@@@ local-definition
+RSpec.describe "Some::Tag" do
+#               @@@@@@@@@ local-definition
 describe Some::Tag do
 #        @@@@@@@@@ local-definition
 context 'when it rains' do

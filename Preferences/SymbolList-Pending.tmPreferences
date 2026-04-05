@@ -15,7 +15,5 @@
 		<key>symbolTransformation</key>
 		<string>s/^(\s*)(?:it|its|specify|scenario|example|include_context)\s+["'](.+)["']\s*$/\1\2/</string>
 	</dict>
-	<key>uuid</key>
-	<string>377BD4F9-4321-4D14-9A34-6A93033F1906</string>
 </dict>
 </plist>

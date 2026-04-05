@@ -30,7 +30,7 @@ contexts:
         1: keyword.other.rspec.behaviour
       push:
         - meta_scope: meta.rspec.behaviour
-        - match: \b(do)\s*$
+        - match: '\b(do)[ \t]*$'
           captures:
             1: keyword.control.ruby.start-block
           pop: true
@@ -41,7 +41,7 @@ contexts:
         1: keyword.other.rspec.example
       push:
         - meta_scope: meta.rspec.example
-        - match: \b(do)\s*$
+        - match: \b(do)[ \t]*$
           captures:
             1: keyword.control.ruby.start-block
           pop: true

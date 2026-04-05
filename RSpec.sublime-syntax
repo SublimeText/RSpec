@@ -9,6 +9,10 @@ scope: source.ruby.rspec
 
 extends: Packages/Ruby/Ruby.sublime-syntax
 
+variables:
+  # Updated list as of rspec-expectations@3.13.5
+  matchers: (?:contain|include|be)_?[^\s\(]*|eql?|(?:have|yield)_[^\s\(]*|raise_error|render_template|redirect_to|match_array|send_email|change|match|start_with|end_with|respond_to|exist|throw_symbol|cover|satisfy|output
+
 contexts:
   main:
     - match: '(?<!\.)\b(before|after|around|shared_examples|shared_context|it_behaves_like|include_examples|it_should_behave_like|it_has_behavior)\b(?![?!])'
@@ -56,7 +60,7 @@ contexts:
     - include: expressions
 
   expectation:
-    - match: '\.(to|not_to)\s*((contain|include|be)_?[^\s\(]*|eql?|have_[^\s\(]*|raise_error|render_template|redirect_to|match_array|send_email)'
+    - match: '\.(to|not_to)\s*({{matchers}})'
       captures:
         1: keyword.other.rspec.expectation
         2: keyword.other.rspec.expectation

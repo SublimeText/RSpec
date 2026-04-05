@@ -28,13 +28,13 @@ contexts:
     - match: ^\s*(describe|context|feature)\b
       captures:
         1: keyword.other.rspec.behaviour
-      push:
-        - meta_scope: meta.rspec.behaviour
-        - match: '\b(do)[ \t]*$'
-          captures:
-            1: keyword.control.ruby.start-block
-          pop: true
-        - include: expressions
+      push: behaviour-body
+    - match: ^\s*(RSpec)(\.)(describe)\b
+      captures:
+        1: support.module.rspec
+        2: punctuation.accessor.dot.ruby
+        3: keyword.other.rspec.behaviour
+      push: behaviour-body
   example:
     - match: ^\s*(it|its|specify|scenario|example|xit)\b
       captures:
@@ -46,6 +46,14 @@ contexts:
             1: keyword.control.ruby.start-block
           pop: true
         - include: expressions
+
+  behaviour-body:
+    - meta_scope: meta.rspec.behaviour
+    - match: '\b(do)[ \t]*$'
+      captures:
+        1: keyword.control.ruby.start-block
+      pop: true
+    - include: expressions
 
   expectation:
     - match: '\.(to|not_to)\s*((contain|include|be)_?[^\s\(]*|eql?|have_[^\s\(]*|raise_error|render_template|redirect_to|match_array|send_email)'

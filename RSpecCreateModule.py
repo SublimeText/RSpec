@@ -41,6 +41,7 @@ class RspecGotoLineAndIndentCommand(sublime_plugin.TextCommand):
         self.view.sel().add(sublime.Region(pt))
 
         self.view.show(pt)
+        # NOTE: Adjust for user-preferences, or just maybe remove entirely
         self.view.insert(edit, pt, "  ")
 
     def is_visible(self):

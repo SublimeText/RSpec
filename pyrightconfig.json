@@ -6,7 +6,7 @@
     "/opt/sublime_text/Lib/python3",
     "/opt/sublime_text/Packages",
   ],
-  "typeCheckingMode": "basic",
+  "typeCheckingMode": "strict",
   "executionEnvironments": [
     {
       "root": "./",

@@ -1,0 +1,15 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/syntax.html
+scope: text.build-output.rspec
+version: 2
+hidden: true
+
+contexts:
+  main:
+    - match: "([A-Za-z0-9_.\/ ]+rb):([0-9]+):"
+      captures:
+        1: entity.name.filename.build-output
+        2: constant.numeric.line-number.build-output
+    - match: '^\[.+\]$'
+      scope: comment.line.result.build-output

@@ -1,0 +1,10 @@
+# SYNTAX TEST "Packages/RSpec/RSpec output.sublime-syntax"
+./spec/myapp/under_test_spec.rb:16:will return all sorts of things
+#<- entity.name.filename.build-output
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.filename.build-output
+#                               ^^ constant.numeric.line-number.build-output
+
+
+[Finished in 705ms with exit code 1]
+#<- comment.line.result.build-output
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.result.build-output

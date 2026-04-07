@@ -3,9 +3,12 @@
 		"bundle",
 		"exec",
 		"rspec",
+		"--format",
+		"failures",
 		"$file"
 	],
-	"file_regex": "rspec ([A-Za-z0-9_.\/ ]+rb):([0-9]+) #()(.+)$",
+	"file_regex": "([A-Za-z0-9_.\/ ]+rb):([0-9]+):",
 	"working_dir": "${project_path:${folder:${file_path}}}",
+	"syntax": "Packages/RSpec/RSpec output.sublime-syntax",
 	"selector": "source.ruby.rspec",
 }

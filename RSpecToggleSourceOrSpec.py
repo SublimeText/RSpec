@@ -104,8 +104,11 @@ class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
     def walk_project_folder(
         self, file_path: str
     ) -> "Iterator[tuple[str, list[str], list[str]]]":
+        norm_file = os.path.normcase(file_path)
         for folder in self.window.folders():
-            if not file_path.startswith(folder):
+            # the trailing separator keeps a folder from matching a sibling it prefixes
+            prefix = os.path.normcase(folder).rstrip(os.sep) + os.sep
+            if not norm_file.startswith(prefix):
                 continue
             yield from os.walk(folder)
 

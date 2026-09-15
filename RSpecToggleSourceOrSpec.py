@@ -47,25 +47,35 @@ class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
                 return self.switch_to(os.path.join(path, target))
         print("RSpec: No matching files found")
 
-    def spec_paths(self, file_path: str):
-        return [
-            self.batch_replace(
-                file_path, (r"\b(?:app|lib)\b", "spec"), (r"\b(\w+)\.rb", r"\1_spec.rb")
-            ),
-            self.batch_replace(
-                file_path,
-                (r"\blib\b", os.path.join("spec", "lib")),
-                (r"\b(\w+)\.rb", r"\1_spec.rb"),
-            ),
-        ]
+    def spec_paths(self, file_path: str) -> "list[str]":
+        path = Path(file_path)
+        target = path.stem + "_spec.rb"
+        guesses = (
+            self.swap_segment(path, ("lib",), ("spec", "lib")),
+            self.swap_segment(path, ("app",), ("spec",)),
+            self.swap_segment(path, ("lib",), ("spec",)),
+        )
+        return [str(guess.with_name(target)) for guess in guesses if guess]
 
-    def code_paths(self, file_path: str):
-        file_path = re.sub(r"\b(\w+)_spec\.rb$", r"\1.rb", file_path)
-        return [
-            re.sub(r"\bspec\b", "app", file_path),
-            re.sub(r"\bspec\b", "lib", file_path),
-            re.sub(r"\b{}\b".format(os.path.join("spec", "lib")), "lib", file_path),
-        ]
+    def code_paths(self, file_path: str) -> "list[str]":
+        path = Path(file_path)
+        target = re.sub(r"_spec$", "", path.stem) + ".rb"
+        guesses = (
+            self.swap_segment(path, ("spec", "lib"), ("lib",)),
+            self.swap_segment(path, ("spec",), ("app",)),
+            self.swap_segment(path, ("spec",), ("lib",)),
+        )
+        return [str(guess.with_name(target)) for guess in guesses if guess]
+
+    def swap_segment(
+        self, path: Path, old: "tuple[str, ...]", new: "tuple[str, ...]"
+    ) -> "Path | None":
+        """Replaces the first run of directory components matching `old` with `new`"""
+        parts = path.parts
+        for i in range(len(parts) - len(old)):  # the bound excludes the filename
+            if parts[i : i + len(old)] == old:
+                return Path(*parts[:i], *new, *parts[i + len(old) :])
+        return None
 
     def quick_find(self, file_path: str) -> bool:
         """Guesses location of the target based on common Ruby project layouts
@@ -73,21 +83,16 @@ class RspecToggleSourceOrSpecCommand(sublime_plugin.WindowCommand):
         SIDE EFFECT: Opens/focuses a file
 
         Returns a boolean representing whether or not the file was found"""
-        if re.search(r"\bspec\b|_spec\.rb$", file_path):
-            for path in self.code_paths(file_path):
-                if os.path.exists(path):
-                    return self.switch_to(path)
-        elif re.search(r"\b(?:app|lib)\b", file_path):
-            for path in self.spec_paths(file_path):
-                if os.path.exists(path):
-                    return self.switch_to(path)
+        path = Path(file_path)
+        if path.name.endswith("_spec.rb") or "spec" in path.parts[:-1]:
+            guesses = self.code_paths(file_path)
+        else:
+            guesses = self.spec_paths(file_path)
+        for guess in guesses:
+            if os.path.exists(guess):
+                return self.switch_to(guess)
         print("RSpec: quick find failed, doing regular find")
         return False
-
-    def batch_replace(self, string: str, *pairs: "tuple[str, str]") -> str:
-        for target, replacement in pairs:
-            string = re.sub(target, replacement, string)
-        return str(string)
 
     def switch_to(self, file_path: str):
         group = shared.other_group_in_pair(self.window)
